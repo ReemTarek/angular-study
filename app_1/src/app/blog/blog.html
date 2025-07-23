@@ -1,0 +1,6 @@
+<p>blog works!</p>
+<p [ngClass]="{'text-danger': isActive, 'text-success': !isActive}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+<button (click)="changeActive()" class="btn btn-primary">Toggle</button>
+
+<p [ngStyle]="{'background-color': isActive? 'yellow':'red',
+'color': isActive? 'black':'white'}">Hello</p>
