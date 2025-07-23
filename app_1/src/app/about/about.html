@@ -15,3 +15,16 @@
     <input type="text" [(ngModel)]="searchTearm" class="form-control">
 </div>
 <p>{{searchTearm}}</p>
+<h1 *ngIf="searchTearm.length > 3; else anyName">Search Term is greater than 3</h1>
+<!-- else is used to show the alternative content when the condition is false -->
+ <!-- template is used to create a reusable content -->
+<ng-template #anyName>
+    <h1>Search Term is less than 3</h1>
+</ng-template>
+<!-- ngSwitch is used to show the content based on the condition -->
+<div [ngSwitch]="searchTearm">
+    <p *ngSwitchCase="'apple'">Apple</p>
+    <p *ngSwitchCase="'banana'">Banana</p>
+    <p *ngSwitchCase="'cherry'">Cherry</p>
+    <p *ngSwitchDefault>No fruit</p>
+</div>
