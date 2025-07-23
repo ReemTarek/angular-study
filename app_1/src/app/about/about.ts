@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './about.html',
   styleUrl: './about.css'
 })
@@ -14,6 +15,10 @@ export class About {
   changeActive(){
     this.active = !this.active;
   }
+  onKeyUp(event: KeyboardEvent){
+    console.log(event.key);
+  }
+  searchTearm = "";
 }
 //not working 
 export class AboutC{

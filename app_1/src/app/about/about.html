@@ -3,6 +3,15 @@
 <p>{{string_1}}</p>
 <img [src]="image_1" alt="image_1">
 <!-- property binding -->
-<img [src]="image_2" alt="image_2" [class]="active ? 'img-fluid' : 'img-fluid img-thumbnail'">
+<img [src]="image_2" alt="image_2" [class]="active ? 'img-fluid' : 'img-fluid img-thumbnail'"> <!-- inline if else (ternary operator)-->
 <!-- event binding -->
 <button (click)="changeActive()" class="btn btn-primary">Toggle</button>
+
+<div class="mb-3">
+    <label for="exampleInputEmail1"   class="form-label">Email address</label>
+    <input type="email" (keyup)="onKeyUp($event)" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+</div>
+<div class="m-3">
+    <input type="text" [(ngModel)]="searchTearm" class="form-control">
+</div>
+<p>{{searchTearm}}</p>
