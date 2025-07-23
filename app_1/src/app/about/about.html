@@ -1,0 +1,8 @@
+<p>about works!</p>
+<!-- interpolation -->
+<p>{{string_1}}</p>
+<img [src]="image_1" alt="image_1">
+<!-- property binding -->
+<img [src]="image_2" alt="image_2" [class]="active ? 'img-fluid' : 'img-fluid img-thumbnail'">
+<!-- event binding -->
+<button (click)="changeActive()" class="btn btn-primary">Toggle</button>
