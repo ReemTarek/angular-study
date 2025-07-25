@@ -1,4 +1,4 @@
-import { Component, Input, Output , EventEmitter} from '@angular/core';
+import { Component, Input, Output , EventEmitter, SimpleChange, OnChanges, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -6,7 +6,10 @@ import { Component, Input, Output , EventEmitter} from '@angular/core';
   templateUrl: './child.html',
   styleUrl: './child.css'
 })
-export class Child {
+export class Child implements OnChanges {
+ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
+  }
 //to send parameter to parent component, we can use @Input decorator
 @Input() childData: string = 'Default Child Data';
 //to send data to parent we use @output decorator
