@@ -5,7 +5,6 @@ import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { ProductsService } from './productsService';
 import { provideHttpClient } from '@angular/common/http';
-
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
@@ -15,6 +14,5 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes, withInMemoryScrolling({scrollPositionRestoration:'enabled'})), provideClientHydration(withEventReplay()),
     ProductsService,
     provideHttpClient(),
-  ],
-  
+  ]  
 };

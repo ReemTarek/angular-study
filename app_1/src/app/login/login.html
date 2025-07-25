@@ -1,0 +1,26 @@
+<p>login works!</p>
+<form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm)">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" formControlName="email">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+<div class="alert alert-danger" *ngIf="loginForm.get('email')?.errors && loginForm.get('email')!.touched">
+    <strong>Error!</strong>
+    <p *ngIf="loginForm.get('email')!.hasError('required')">Email is required.</p>
+    <p *ngIf="loginForm.get('email')!.hasError('email')">Please enter a valid email address.</p>
+</div> 
+</div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input [type]="showPassword? 'text':'password'" class="form-control" id="exampleInputPassword1" name="password" formControlName="password">
+    <span class="btn btn-secondary" (click)="showPassword = !showPassword">{{ showPassword ? 'Hide' : 'Show' }}</span>
+    
+    <div class="alert alert-danger" *ngIf="loginForm.get('password')?.errors && loginForm.get('password')!.touched">
+        <strong>Error!</strong>
+        <p *ngIf="loginForm.get('password')!.hasError('required')">Password is required.</p>
+        <p *ngIf="loginForm.get('password')!.hasError('minlength')">Password must be at least 6 characters long.</p>
+        <p *ngIf="loginForm.get('password')!.hasError('pattern')">Password should be like Ab_12345 form example</p>
+        </div>
+</div>
+  <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Submit</button>
+</form>

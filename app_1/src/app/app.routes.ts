@@ -7,6 +7,8 @@ import { NotFound } from './not-found/not-found'; // Import the NotFound compone
 import { Details } from './contact/details/details';
 import { Mobile } from './contact/mobile/mobile';
 import { PostsView } from './posts-view/posts-view';
+import { Login } from './login/login';
+import { Register } from './register/register';
 //configure routes
 export const routes: Routes = [
     //define the path and component to be rendered
@@ -23,7 +25,8 @@ export const routes: Routes = [
     },
     {path:"about", component:About, title:'About'},
     {path:'posts', component:PostsView, title:'Posts'}, // Assuming you have a PostsComponent to display posts
-
+    {path:"login", component:Login , title:'Login'}, // Assuming you have a LoginComponent for login functionality
+    {path:"register", component:Register , title:'Register'}, // Assuming you have a LoginComponent for login functionality
     //should be the last route
     //if no other route matches, the NotFound component will be rendered
     {path: '**', component: NotFound,title:'Oopps'} //wildcard route to redirect to home for any unknown paths
