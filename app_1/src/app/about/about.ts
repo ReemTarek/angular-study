@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ProductsService } from '../productsService';
 @Component({
   selector: 'app-about',
   imports: [FormsModule,CommonModule],
@@ -19,6 +20,13 @@ export class About {
     console.log(event.key);
   }
   searchTearm = "";
+  arr: string[] = [];
+  constructor() {
+    //bad practice to create service instance like this
+    let prodServ = new ProductsService(); 
+    this.arr = prodServ.items;
+  }
+  
 }
 //not working 
 export class AboutC{

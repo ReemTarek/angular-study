@@ -6,6 +6,7 @@ import { About } from './about/about';
 import { NotFound } from './not-found/not-found'; // Import the NotFound component
 import { Details } from './contact/details/details';
 import { Mobile } from './contact/mobile/mobile';
+import { PostsView } from './posts-view/posts-view';
 //configure routes
 export const routes: Routes = [
     //define the path and component to be rendered
@@ -21,7 +22,7 @@ export const routes: Routes = [
         ]
     },
     {path:"about", component:About, title:'About'},
-
+    {path:'posts', component:PostsView, title:'Posts'}, // Assuming you have a PostsComponent to display posts
 
     //should be the last route
     //if no other route matches, the NotFound component will be rendered

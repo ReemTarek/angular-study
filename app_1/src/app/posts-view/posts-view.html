@@ -1,0 +1,14 @@
+<p>posts-view works!</p>
+
+<div class="card" *ngFor="let post of postsData">
+    <div class="card-body">
+        <h5 class="card-title">Posts</h5>
+        <p class="card-text">List of posts fetched from the service:</p>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <h6>{{post.title}}</h6>
+                <p>{{post.body}}</p>
+            </li>
+        </ul>
+        </div>  
+</div>
