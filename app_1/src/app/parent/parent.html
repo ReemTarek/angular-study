@@ -1,4 +1,6 @@
 <p>parent works!</p>
 <!-- Display the message from the parent -->
-<app-child [childData]="msg" (childEvent)="onChildEvent($event)"></app-child>
+<app-child [childData]="msg" (childEvent)="onChildEvent($event)">
+    <p first>first</p>
+</app-child>
 <p class="alert alert-info">Message from Parent: {{ parentMsg }}</p>

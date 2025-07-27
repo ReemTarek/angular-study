@@ -4,7 +4,8 @@ import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { ProductsService } from './productsService';
-import { provideHttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptors } from '@angular/common/http';
+import { loadingInterceporInterceptor } from './interceptor/loading-intercepor-interceptor';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
@@ -13,6 +14,8 @@ export const appConfig: ApplicationConfig = {
     // This will restore the scroll position when navigating back to a previously visited route
     provideRouter(routes, withInMemoryScrolling({scrollPositionRestoration:'enabled'})), provideClientHydration(withEventReplay()),
     ProductsService,
-    provideHttpClient(),
+    provideHttpClient(    withInterceptors([loadingInterceporInterceptor]),
+),
+    
   ]  
 };

@@ -23,8 +23,8 @@ export class About {
   arr: string[] = [];
   constructor() {
     //bad practice to create service instance like this
-    let prodServ = new ProductsService(); 
-    this.arr = prodServ.items;
+  //   let prodServ = new ProductsService(); 
+  //   this.arr = prodServ.items;
   }
 
 }
