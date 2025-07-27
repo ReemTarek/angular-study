@@ -8,7 +8,7 @@ import { LoaderService } from '../loaderService';
   styleUrl: './loader.css' 
 })
 export class LoaderComponent {
-showLoader: boolean = true;
+showLoader: boolean = false;
 constructor(private loaderService: LoaderService) {
     // Subscribe to the loading state from the Loader service
     this.loaderService.loadingSubject.subscribe((isLoading: boolean) => {
